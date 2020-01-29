@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.comic.mapper.ComicInfoMapper">
+  <resultMap id="BaseResultMap" type="com.comic.pojo.ComicInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+  </resultMap>
+</mapper>

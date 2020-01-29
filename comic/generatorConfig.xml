@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.comic.utils.MyMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://39.106.71.25:3306/comic"
+                        userId="root"
+                        password="123456">
+                        
+                        <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <!-- 对于生成的pojo所在包 -->
+        <javaModelGenerator targetPackage="com.comic.pojo" targetProject="src/main/java"/>
+
+		<!-- 对于生成的mapper xml所在目录 -->
+        <sqlMapGenerator targetPackage="com.comic.mapper" targetProject="src/main/resources"/>
+
+		<!-- 配置mapper对应的java映射 -->
+        <javaClientGenerator targetPackage="com.comic.mapper" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+		<!--   <table tableName="user"></table>    -->
+		
+		<table tableName="classify"></table>
+		<table tableName="comic_classify"></table>
+		<table tableName="comic_info"></table>
+		<table tableName="user"></table>
+		<table tableName="user_collect"></table>
+		 
+    </context>
+</generatorConfiguration>
