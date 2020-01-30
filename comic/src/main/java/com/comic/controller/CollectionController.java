@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.comic.pojo.User;
 import com.comic.service.CollectionService;
 
 @Controller
@@ -18,6 +19,7 @@ public class CollectionController {
 	
 	@RequestMapping("/show")
 	public String showUserCollection(ModelMap map, HttpServletRequest request) {
+		User user = (User) request.getAttribute("user-session");
 	    return collectionService.showUserCollection(map, request);
 
 	}

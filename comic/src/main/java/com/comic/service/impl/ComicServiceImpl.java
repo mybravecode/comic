@@ -54,9 +54,18 @@ public class ComicServiceImpl implements ComicService{
 		//将comicId都取出来
 		List <Integer> comicIds = new ArrayList<>();
 		
+		
+		
 		for(ComicClassify c: comicClassifyList)
 			comicIds.add(c.getComicId());
 		
+		//防止该类别下，没有动漫 会报错
+		if(comicIds.size() == 0) {
+			map.addAttribute("comicList", new ArrayList<ComicInfo>());
+					
+			return "freemarker/comic_classify";
+		}
+				
 		// 根据查询到的所有属于classId的comicId来找到对应的comic信息
 		//此处使用in查询语句
 		
@@ -89,8 +98,20 @@ public class ComicServiceImpl implements ComicService{
 		System.out.println("/brief Service comicId :" + comicId);
 		System.out.println("/brief Service comicInfoJson :" + JsonUtil.objectToJson(comicInfo));
 
-
-		
 		return "freemarker/comic_brief";
+	}
+
+
+	@Override
+	public String getSearchComic(String keyword, ModelMap map) {
+		Example example = new Example(ComicInfo.class);
+		Criteria criteria = example.createCriteria();
+		String like =  "%" + keyword + "%";
+		
+		criteria.orLike("name", like);
+		criteria.orLike("message", like);
+		List<ComicInfo> comicList = comicMapper.selectByExample(example);
+		map.addAttribute("comicList", comicList);
+		return "freemarker/search";
 	}
 }

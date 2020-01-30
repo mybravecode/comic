@@ -66,11 +66,14 @@ body {
             <tr>
               <td height="50" colspan="2" align="center"><input name="button" type="submit" class="STYLE34" id="button" value="登录" /></td>
             </tr>
+            <tr>
+            <td><a href="/registerPage"><p>没有账号？注册</p></a></td>
+            </tr>
           </table>
         </form>        </td>
       </tr>
 </table>
-
+    
 </p>
 </body>
 </html>

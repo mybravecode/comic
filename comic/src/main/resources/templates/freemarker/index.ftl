@@ -44,9 +44,9 @@
     <td width="1091" height="59" >
 	<table width="1065"  cellspacing="0" >
          <td width="414" height="47" >
-		  <form id="form1" name="form1" method="post" action="showRecord.jsp">
+		  <form id="form1" name="form1" method="post" action="/comic/search">
             <label></label>
-            <input name="comic_name" type="text" class="STYLE13" id="textfield"  />
+            <input name="keyword" type="text" class="STYLE13" id="textfield"  />
             <td width="59" valign="middle" class="STYLE21" border="1" ><span class="STYLE21">
 			<input name="Submit" type="submit" class="STYLE30" value="搜索" />
            </span></td>
@@ -54,10 +54,14 @@
 		 </td>
           <td width="465" valign="middle"  >&nbsp;</td>
 		  <td width="72" class="STYLE6"><span class="STYLE21"><a href="/collection/show"><span class="STYLE22">收藏</span></a></span></td>
+		  
+		  <!--
           <td width="72" valign="middle"class="STYLE6" ><span class="STYLE21"><a href="/loginPage"><span class="STYLE22">登陆</span></a></span></td>
           <td width="72" class="STYLE34"><span class="STYLE21"><a href="/registerPage"><span class="STYLE22">注册</span></a></span></td>
-          <td width="72" class="STYLE34"><jsp:getProperty name="loginBean" property="logname"/></td>
+		  -->
 		  
+		   <td width="72" valign="middle"class="STYLE6" ><span class="STYLE21"><span class="STYLE22">欢迎：${username}</span></span></td>
+		   
         </table>
 		
 		  <div align="right"></div>
@@ -65,7 +69,7 @@
 <p>&nbsp;</p>
 <table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="291" rowspan="2"><img src=static/image/35.jpg alt="" height="372" align="top" /></td>
+    <td width="291" rowspan="2"><img src=/static/image/35.jpg alt="" height="372" align="top" /></td>
     <td height="199" colspan="2"><img src="static/image/39" alt="" width="438" height="205" /></td>
     <td width="297" rowspan="2"><img src="static/image/36" alt="" height="372" /></td>
   </tr>
